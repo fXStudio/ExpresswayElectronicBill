@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- Define Write To Console -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- Define Write To File -->
+	<appender name="ERROR-FILE" class="ch.qos.logback.core.FileAppender">
+		<file>${LotterHome}/LotterData/logs/error/LotterData_error.log</file>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>lotterData_error.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+			<!-- keep 5 days' worth of history capped at 1GB total size -->
+			<maxHistory>5</maxHistory>
+			<totalSizeCap>1GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- Define Write To File -->
+	<appender name="RUN-FILE" class="ch.qos.logback.core.FileAppender">
+		<file>${LotterHome}/LotterData/logs/run/LotterData_run.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>LotterData_run.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+			<!-- keep 5 days' worth of history capped at 1GB total size -->
+			<maxHistory>5</maxHistory>
+			<totalSizeCap>1GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- Root Log rule -->
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="ERROR-FILE" />
+	</root>
+	
+	<!-- Customize Lotter Rule -->
+	<logger name="com.expressway.bill.upload.task" level="INFO" >
+		<appender-ref ref="RUN-FILE" />
+	</logger>
+</configuration>
