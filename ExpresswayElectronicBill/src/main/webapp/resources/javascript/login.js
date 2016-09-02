@@ -36,6 +36,10 @@ $(document).ready(function() {
 		var username = $('#login-name').val();
 		var password = $('#login-pass').val();
 		
-		loginFnc.alertMessage();
+		if(username.length > 0 && password.length > 0){
+			window.location.href = "mainboard";
+		} else{
+			loginFnc.alertMessage();
+		}
 	});
 });

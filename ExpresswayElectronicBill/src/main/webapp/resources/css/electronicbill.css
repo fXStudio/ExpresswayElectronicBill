@@ -1,0 +1,191 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h2, h3 {
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+/*
+ * -- Layout Styles --
+ */
+.l-content {
+	margin: 45px auto 0px auto;
+}
+
+.pure-menu-item a:hover,
+.pure-menu-item a:focus {
+    background-color:rgb(61, 146, 201);
+}
+
+/*
+ * -- MENU STYLES --
+ * Make the menu have a very faint box-shadow.
+ */
+.pure-menu {
+	background-color: black;
+}
+
+.pure-menu-heading, .pure-menu-list a {
+	color: #fff;
+	font-weight: 600;
+	font-size: 1em;
+}
+
+.pure-menu-heading {
+	font-size: 1.6em;
+	font-weight: 1200;
+}
+
+.pure-menu ul {
+	float: right;
+	margin-top:10px;
+}
+
+/*
+ * -- PRICING TABLE WRAPPER --
+ * This element wraps up all the pricing table elements
+ */
+.pricing-tables, .information {
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+.pricing-tables {
+	margin-bottom: 3.125em;
+	text-align: center;
+}
+
+/*
+ * -- PRICING TABLE  --
+ * Every pricing table has the .pricing-table class
+ */
+.pricing-table {
+	border: 1px solid #ddd;
+	margin: 18px 5px 0 5px;
+	height: 230px;
+}
+
+/*
+ * -- PRICING TABLE HEADER COLORS --
+ * Choose a different color based on the type of pricing table.
+ */
+.pricing-table-free .pricing-table-header {
+	background: #519251;
+}
+
+.pricing-table-biz .pricing-table-header {
+	background: #2c4985;
+}
+
+.pricing-table-statis .pricing-table-header {
+	background: #cf4646;
+}
+
+.pricing-table-log .pricing-table-header {
+	background: #e48632;
+}
+
+.pricing-table-manual .pricing-table-header {
+	background: #6d3353;
+}
+
+/*
+ * -- PRICING TABLE HEADER --
+ * By default, a header is black/white, and has some styles for its <h2> name.
+ */
+.pricing-table-header {
+	background: #111;
+	color: #fff;
+}
+
+.pricing-table-header h2 {
+	margin: 0;
+	padding-top: 2em;
+	font-size: 1em;
+	font-weight: normal;
+}
+
+/*
+ * -- PRICING TABLE PRICE --
+ * Styles for the price and the corresponding <span>per month</span>
+ */
+.pricing-table-price {
+	font-size: 5.5em;
+	margin: 2em 0 2em 0;
+	font-weight: 100;
+}
+
+.pricing-table-price span {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.15em;
+    padding-bottom: 1em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    *color: #fff;
+}
+
+/*
+ * -- PRICING TABLE BUTTON --
+ * Styles for the "Choose" button at the bottom of a pricing table.
+ * This inherits from Pure Button.
+ */
+.button-choose {
+	border: 1px solid #ccc;
+	background: #fff;
+	color: #333;
+	border-radius: 2em;
+	font-weight: bold;
+	position: relative;
+	bottom: -0.5em;
+}
+
+.func_header {
+	font-size: 1em;
+	font-weight: 800;
+	margin:70px 0 0 50px;
+	padding-bottom:3px;
+	border: none;
+	border-bottom: 1px solid lightGray;
+}
+
+.pure-form {
+	margin:20px 0 0 15px;
+}
+
+.sidebar {
+    background: #2f3135;
+    padding:50px 2px 0 10px;
+    border-left: solid 2px #ebeeb5;
+}
+
+.sidebar p {
+	text-indent: 2em;
+	font-size: 0.9em;
+	font-weight: 1000;
+	color: #e1eaf4;
+}
+
+#layout {
+    padding: 0;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+@media (max-width: 48em) {
+    .sidebar {
+        position: relative;
+        top: 0;
+        bottom: 0;
+    }
+}
+

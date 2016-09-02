@@ -24,7 +24,7 @@
 
     <body>
 		<div class="app-title">
-			<h1>Management Plantform</h1>
+			<h1>System Console</h1>
 		</div>
 		
 		<div id="alert_message"></div>
