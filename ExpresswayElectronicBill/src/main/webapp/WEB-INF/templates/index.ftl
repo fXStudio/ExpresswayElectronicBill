@@ -17,7 +17,8 @@
         
 	    <!-- WebPage Style Desc -->
 	    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-	    <link rel="stylesheet" href="styles/normalize.css" />
+	    <link rel="stylesheet" href="styles/jquery-ui.min.css" />
+	    <link rel="stylesheet" href="styles/jquery.jui_alert.css" />
 	    <link rel="stylesheet" href="styles/login.css" />
     </head>
 
@@ -25,6 +26,8 @@
 		<div class="app-title">
 			<h1>Management Plantform</h1>
 		</div>
+		
+		<div id="alert_message"></div>
 		
     	<!-- Login Form -->
 	    <div class="login">
@@ -48,6 +51,9 @@
     	
     	<!--  Load Javascript library -->
         <script src="javascript/jquery-1.11.0.min.js"></script>
+        <script src="javascript/jquery-ui.min.js"></script>
+        <script src="javascript/jquery.jui_alert.min.js"></script>
+        <script src="javascript/jquery.jui_alert.i18n.en.js"></script>
         <script src="javascript/login.js"></script>
     </body>
 </html>

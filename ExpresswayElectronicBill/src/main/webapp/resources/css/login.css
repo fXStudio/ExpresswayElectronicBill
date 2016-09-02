@@ -23,8 +23,8 @@ body {
 	border-radius: 5px
 }
 
-.login-label{
-	font-size:11pt;
+.login-label {
+	font-size: 11pt;
 	color: gray;
 	font-weight: bolder;
 }
@@ -48,7 +48,7 @@ input {
 	padding: 10px 0;
 	width: 310px;
 	transition: border .5s;
-	text-align:center;
+	text-align: center;
 }
 
 input:focus {
@@ -71,7 +71,7 @@ input:focus {
 	display: block;
 	width: 310px;
 	margin: 0 auto;
-	text-align:center;
+	text-align: center;
 }
 
 .btn:hover {
@@ -83,5 +83,25 @@ input:focus {
 	color: #444;
 	display: block;
 	margin-top: 12px;
-	text-align:center;
+	text-align: center;
+}
+
+.alert_message {
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	letter-spacing: 1px;
+	margin:0px;
+	color:red;
+	font-weight:bolder;
+}
+
+.alert_message_container {
+	margin: 20px auto;
+	width: 350px;
+	text-align: center;
+}
+
+.alert_message_area{
+	background-color:#fbb;
+	border:solid 1px black;
 }
