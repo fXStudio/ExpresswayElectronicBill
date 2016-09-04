@@ -66,7 +66,7 @@
 	                        DB<span>Database Connection Config</span>
 	                    </span>
 	                </div>
-	                <button class="button-choose pure-button">View & Edit</button>
+	                <a class="button-choose pure-button" href="dbconfig">View & Edit</a>
 	            </div>
 	        </div>
 	
@@ -79,7 +79,7 @@
 	                        Task<span>System Task Config</span>
 	                    </span>
 	                </div>
-	                <button class="button-choose pure-button">View & Edit</button>
+	                <a class="button-choose pure-button" href="taskconfig">View & Edit</a>
 	            </div>
 	        </div>
 	        
@@ -92,7 +92,7 @@
 	                        Statis<span>Data Statistics Report</span>
 	                    </span>
 	                </div>
-	                <button class="button-choose pure-button">View</button>
+	                <a class="button-choose pure-button" href="statisticview">View</a>
 	            </div>
 	        </div>
 	        
@@ -105,7 +105,7 @@
 	                        LOG<span>System Runtime Log</span>
 	                    </span>
 	                </div>
-	                <button class="button-choose pure-button">View</button>
+	                <a class="button-choose pure-button" href="logview">View</a>
 	            </div>
 	        </div>
 	        
@@ -118,7 +118,7 @@
 	                        Manual<span>Manual Execute Job</span>
 	                    </span>
 	                </div>
-	                <button class="button-choose pure-button">execute</button>
+	                <a class="button-choose pure-button" href="manualjob">Edit</a>
 	            </div>
 	        </div>
 	    </div>

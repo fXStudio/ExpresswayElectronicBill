@@ -18,7 +18,6 @@
         
 	    <!-- WebPage Style Desc -->
 	    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-		<link rel="stylesheet" href="styles/normalize.css">
 		<link rel="stylesheet" href="styles/pure-min.css">
 	    
 	    <!--[if lte IE 8]>
@@ -44,48 +43,50 @@
 		
 		<div class="header_container pure-u-1 pure-u-md-3-4">
 		    <fieldset class="func_header">
-	    		<legend>FTP Connnection Config</legend>
+	    		<legend>Statistics Report Viewer</legend>
 		    </fieldset>
 	    </div>
 	    
 	    <div id="layout" class="pure-g">
 	        <div class="pure-u-1 pure-u-md-3-4"">
-			    <form class="pure-form pure-form-aligned">
-			        <div class="pure-control-group">
-			            <label for="name">Server Address</label>
-			            <input id="name" type="text">
+	        	<center>
+		        	<div class="pure-u-1 pure-u-md-1-4">
+			            <div class="statis-panel pricing-table-free">
+			                <div class="pricing-table-header">
+			                    <h2>Day Upload Bills</h2>
+			
+			                    <span class="pricing-table-price">
+			                        1000<span>Every Day Upload Bills</span>
+			                    </span>
+			                </div>
+			            </div>
 			        </div>
 			
-			        <div class="pure-control-group">
-			            <label for="email">Username</label>
-			            <input id="email">
+			        <div class="pure-u-1 pure-u-md-1-4">
+			            <div class="statis-panel pricing-table-log">
+			                <div class="pricing-table-header">
+			                    <h2>Month Upload Bills</h2>
+			
+			                    <span class="pricing-table-price">
+			                        1W<span>Every Month Upload Bills</span>
+			                    </span>
+			                </div>
+			            </div>
 			        </div>
 			
-			        <div class="pure-control-group">
-			            <label for="password">Password</label>
-			            <input id="password" type="password">
-			        </div>
+			        <div class="pure-u-1 pure-u-md-1-4">
+			            <div class="statis-panel pricing-table-biz">
+			                <div class="pricing-table-header">
+			                    <h2>Year Upload Bills</h2>
 			
-			        <div class="pure-control-group">
-			            <label for="foo">FTP Port</label>
-			            <input id="foo" type="text">
+			                    <span class="pricing-table-price">
+			                        16W<span>Every Year Upload Bills</span>
+			                    </span>
+			                </div>
+			            </div>
 			        </div>
-			        
-			        <div class="pure-control-group">
-			            <label for="foo">Remote Directory</label>
-			            <input id="foo" type="text">
-			        </div>
-			        
-			        <div class="pure-control-group">
-			            <label for="foo">Local Directory</label>
-			            <input id="foo" type="text">
-			        </div>
-			
-			        <div class="pure-controls">
-			            <button type="submit" class="pure-button pure-button-default">Test</button>
-			            <button type="submit" class="pure-button pure-button-primary">Submit</button>
-			        </div>
-				</form>
+		        </center>
+		        <canvas id="myChart" width="400" height="120"></canvas>
 	        </div>
 	        
 	        <div class="pure-u-1 pure-u-md-1-4 sidebar">
@@ -100,6 +101,26 @@
 
     	<!--  Load Javascript library -->
         <script src="javascript/jquery-1.11.0.min.js"></script>
-        <script src="javascript/jquery-ui.min.js"></script>
+        <script src="javascript/Chart.min.js"></script>
+		<script>
+			var ctx = $("#myChart").get(0).getContext("2d");
+			var data = {
+				labels : ["1","2","3","4","5","6","7","8","9","10","11","12"],
+				datasets : [
+					{
+						label: '单日票据信息上传量',
+						backgroundColor: 'rgba(89, 156, 100, 0.5)',
+						data : [65,59,590,181,56,1155,40,860,71,96,1135,60]
+					}
+				]
+			}
+			var myChart = new Chart(ctx, {
+			    type: 'line',
+			    data: data,
+			    options: {
+			        responsive: true
+			    }
+			});
+		</script>
     </body>
 </html>

@@ -44,7 +44,7 @@
 		
 		<div class="header_container pure-u-1 pure-u-md-3-4">
 		    <fieldset class="func_header">
-	    		<legend>FTP Connnection Config</legend>
+	    		<legend>Database Connnection Config</legend>
 		    </fieldset>
 	    </div>
 	    
@@ -57,6 +57,16 @@
 			        </div>
 			
 			        <div class="pure-control-group">
+			            <label for="foo">Service Name</label>
+			            <input id="foo" type="text">
+			        </div>
+			        
+			        <div class="pure-control-group">
+			            <label for="foo">Database Port</label>
+			            <input id="foo" type="text">
+			        </div>
+			
+			        <div class="pure-control-group">
 			            <label for="email">Username</label>
 			            <input id="email">
 			        </div>
@@ -64,21 +74,6 @@
 			        <div class="pure-control-group">
 			            <label for="password">Password</label>
 			            <input id="password" type="password">
-			        </div>
-			
-			        <div class="pure-control-group">
-			            <label for="foo">FTP Port</label>
-			            <input id="foo" type="text">
-			        </div>
-			        
-			        <div class="pure-control-group">
-			            <label for="foo">Remote Directory</label>
-			            <input id="foo" type="text">
-			        </div>
-			        
-			        <div class="pure-control-group">
-			            <label for="foo">Local Directory</label>
-			            <input id="foo" type="text">
 			        </div>
 			
 			        <div class="pure-controls">
