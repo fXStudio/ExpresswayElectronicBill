@@ -11,21 +11,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class GenericController {
-	/**
-	 * @return 主页面
-	 */
-	@RequestMapping(value = { "/", "index" })
-	public String index() {
-		return "index";
-	}
+    /**
+     * @return 主页面
+     */
+    @RequestMapping(value = { "/", "index" })
+    public String index() {
+        return "index";
+    }
 
-	/**
-	 * @param path
-	 * 
-	 * @return 系统内部页面跳转
-	 */
-	@RequestMapping(value = "{path}")
-	public String forward(@PathVariable("path") String path) {
-		return path;
-	}
+    /**
+     * @param path
+     * 
+     * @return 系统内部页面跳转
+     */
+    @RequestMapping(value = "{path}")
+    public String forward(@PathVariable("path") String path) {
+        return path;
+    }
 }

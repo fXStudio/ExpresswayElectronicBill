@@ -30,7 +30,7 @@
 
 	<!-- Mapper类加载 -->
 	<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.expressway.ftp.client.mapper" />
+		<property name="basePackage" value="com.expressway.electronicbill.mappers" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 </beans>

@@ -12,6 +12,6 @@
 
 	<!-- 实体类别名 -->
 	<typeAliases>
-		<package name="com.expressway.ftp.client.models" />
+		<package name="com.expressway.electronicbill.models" />
 	</typeAliases>
 </configuration> 

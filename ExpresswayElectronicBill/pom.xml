@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>1.6</java.version>
+		<tomcat.version>7.0.59</tomcat.version>
 	</properties>
 
 	<dependencies>
@@ -95,4 +96,5 @@
 			</plugin>
 		</plugins>
 	</build>
+	<packaging>war</packaging>
 </project>
