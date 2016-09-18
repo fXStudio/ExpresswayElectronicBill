@@ -28,8 +28,8 @@ public class BillDetailTask {
 			BillDetail detail = new BillDetail();
 			// 整个的明细头信息
 			BillDetailHeader header = new BillDetailHeader();
-			header.setDeptcode("001");
 			header.setRgncode("001");
+			header.setDeptcode("001");
 			header.setDate("2016-07-20");
 			header.setCount("2");
 
