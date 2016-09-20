@@ -1,4 +1,4 @@
-package com.expressway.electronicbill.detail;
+package com.expressway.electronicbill.reports.detail;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

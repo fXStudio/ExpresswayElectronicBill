@@ -53,27 +53,47 @@
 			    <form class="pure-form pure-form-aligned">
 			        <div class="pure-control-group">
 			            <label for="name">Server Address</label>
-			            <input id="name" type="text">
+			            <#if model["serverAddress"]??>
+			            	<input id="serverAddress" type="text" value="${model["serverAddress"]}">
+			            <#else>
+			            	<input id="serverAddress" type="text">
+			            </#if>
 			        </div>
 			
 			        <div class="pure-control-group">
-			            <label for="foo">Service Name</label>
-			            <input id="foo" type="text">
+			            <label for="serviceName">Service Name</label>
+			            <#if model["serviceName"]??>
+			            	<input id="serviceName" type="text" value="${model["serviceName"]}">
+			            <#else>
+			            	<input id="serviceName" type="text">
+			            </#if>
 			        </div>
 			        
 			        <div class="pure-control-group">
-			            <label for="foo">Database Port</label>
-			            <input id="foo" type="text">
+			            <label for="port">Database Port</label>
+			            <#if model["port"]??>
+			            	<input id="port" type="text" value="${model["port"]}">
+			            <#else>
+			            	<input id="port" type="text">
+			            </#if>
 			        </div>
 			
 			        <div class="pure-control-group">
-			            <label for="email">Username</label>
-			            <input id="email">
+			            <label for="username">Username</label>
+			            <#if model["username"]??>
+			            	<input id="username" type="text" value="${model["username"]}">
+			            <#else>
+			            	<input id="username" type="text">
+			            </#if>
 			        </div>
 			
 			        <div class="pure-control-group">
 			            <label for="password">Password</label>
-			            <input id="password" type="password">
+			            <#if model["password"]??>
+			            	<input id="password" type="text" value="${model["password"]}">
+			            <#else>
+			            	<input id="password" type="text">
+			            </#if>
 			        </div>
 			
 			        <div class="pure-controls">

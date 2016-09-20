@@ -1,4 +1,4 @@
-package com.expressway.electronicbill.summary;
+package com.expressway.electronicbill.reports.summary;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -29,6 +29,13 @@ $(document).ready(function() {
 	} ();
 	// 初始化焦点
 	loginFnc.setFocus();
+	
+	// 回车事件
+	$('#login-pass').keypress(function(event){
+		if(event.keyCode === 13) {
+			$('a.btn').get(0).click();
+		}
+	});
 
 	// 表单提交的事件处理函数
 	$('a.btn').click(function() {
@@ -36,8 +43,25 @@ $(document).ready(function() {
 		var username = $('#login-name').val();
 		var password = $('#login-pass').val();
 		
+		// 用户名和密码不能为空
 		if(username.length > 0 && password.length > 0){
-			window.location.href = "mainboard";
+			$.ajax({   
+				url: "services/systemLogin",
+				dataType: "json",
+				data: {"username": username, "password": password},
+				timeout: 5000,
+				type: 'post',
+				success: function(data, textStatus) {
+                    if (data.success) {
+                    	window.location.href = "mainboard";
+                    } else {
+    					loginFnc.alertMessage();
+                    }  
+				},   
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					loginFnc.alertMessage();
+				}   
+			});
 		} else{
 			loginFnc.alertMessage();
 		}

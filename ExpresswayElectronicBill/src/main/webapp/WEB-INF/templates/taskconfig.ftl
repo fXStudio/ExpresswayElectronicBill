@@ -48,22 +48,21 @@
 		
 		<div class="header_container pure-u-1 pure-u-md-3-4">
 		    <fieldset class="func_header">
-	    		<legend>Task Viewer & Edit</legend>
+	    		<legend>Task Mangement</legend>
 		    </fieldset>
 	    </div>
 	    
 	    <div id="layout" class="pure-g">
-	        <div class="pure-u-1 pure-u-md-3-4"">
-	        	<table id="example" class="display" cellspacing="0" width="100%">
+	        <div class="pure-u-1 pure-u-md-3-4">
+	        	<table id="example" class="display" cellspacing="0">
 			        <thead>
 			            <tr>
-			                <th></th>
-			                <th>First name</th>
-			                <th>Last name</th>
-			                <th>Position</th>
-			                <th>Office</th>
-			                <th width="18%">Start date</th>
-			                <th>Salary</th>
+			                <th>Job Id</th>
+			                <th>Job Name</th>
+			                <th>Status</th>
+			                <th>Cron</th>
+			                <th>options</th>
+			                <th>Desc</th>
 			            </tr>
 			        </thead>
 			    </table>
@@ -82,71 +81,56 @@
     	<!--  Load Javascript library -->
         <script src="javascript/jquery-1.11.0.min.js"></script>
         <script src="javascript/jquery.dataTables.min.js"></script>
-        <script src="javascript/dataTables.buttons.min.js"></script>
         <script src="javascript/dataTables.select.min.js"></script>
         <script src="javascript/dataTables.editor.min.js"></script>
         <script type="text/javascript" language="javascript" class="init">
         	var editor; 
 			$(document).ready(function() {
-				editor = new $.fn.dataTable.Editor( {
-			        ajax: "../php/staff.php",
-			        table: "#example",
-			        fields: [ {
-			                label: "First name:",
-			                name: "first_name"
-			            }, {
-			                label: "Last name:",
-			                name: "last_name"
-			            }, {
-			                label: "Position:",
-			                name: "position"
-			            }, {
-			                label: "Office:",
-			                name: "office"
-			            }, {
-			                label: "Extension:",
-			                name: "extn"
-			            }, {
-			                label: "Start date:",
-			                name: "start_date",
-			                type: "datetime"
-			            }, {
-			                label: "Salary:",
-			                name: "salary"
-			            }
-			        ]
-			    } );
-			    // Activate an inline edit on click of a table cell
-			    $('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
-			        editor.inline( this );
-			    } );
-			 
 			    $('#example').DataTable( {
-			        dom: "Bfrtip",
+    				"ordering": false,
+    				"info": false,
+    				"paging": false,
+                    "scrollX": true,
+			        "ajax": {
+			            "url": "datas/taskList",
+			            "type": "POST"
+			        },
 			        columns: [
-			            {
-			                data: null,
-			                defaultContent: '',
-			                className: 'select-checkbox',
-			                orderable: false
+			            { data: "jobId" },
+			            { data: "jobName" },
+			            { data: "jobStatus" },
+			            { 
+			            	data: "cronExpression"
 			            },
-			            { data: "first_name" },
-			            { data: "last_name" },
-			            { data: "position" },
-			            { data: "office" },
-			            { data: "start_date" },
-			            { data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+			            { data: "desc" },
+			            {/** Custom Define Column */
+				            "targets": -1,
+				            "data": null,
+				            "defaultContent": "<span>run</span>&nbsp;<span>stop</span>"
+				        }
 			        ],
 			        select: {
 			            style:    'os',
 			            selector: 'td:first-child'
 			        },
-			        buttons: [
-			            { extend: "create", editor: editor },
-			            { extend: "edit",   editor: editor },
-			            { extend: "remove", editor: editor }
-			        ]
-			    } );
+			        "language": {
+						"processing": "玩命加载中...",
+						"lengthMenu": "显示 _MENU_ 项结果",
+						"zeroRecords": "没有匹配结果",
+						"info": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+						"infoEmpty": "显示第 0 至 0 项结果，共 0 项",
+						"infoFiltered": "(由 _MAX_ 项结果过滤)",
+						"infoPostFix": "",
+						"search": "搜索:",
+						"url": "",
+						"paginate": {
+							"first":    "首页",
+							"previous": "上页",
+							"next":     "下页",
+							"last":     "末页"
+						}
+					}
+			    });
 			} );
 		</script>
     </body>

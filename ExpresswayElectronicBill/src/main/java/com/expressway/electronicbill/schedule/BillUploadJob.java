@@ -1,4 +1,4 @@
-package com.expressway.electronicbill.task;
+package com.expressway.electronicbill.schedule;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,48 +9,52 @@ import java.io.InputStream;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.quartz.DisallowConcurrentExecution;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@Component("BillUploadTask")
-public class BillUploadTask {
-	private @Value("${bill.upload.local_dir}") String LOCAL_DIR;
-	private @Value("${bill.upload.local_back}") String LOCAL_BACKUP;
-	private @Value("${bill.upload.ftp.remote_dir}") String REMOTE_DIR;
-	private @Value("${bill.upload.ftp.server}") String FTP_SERVER;
-	private @Value("${bill.upload.ftp.port}") int FTP_PORT;
-	private @Value("${bill.upload.ftp.username}") String USERNAME;
-	private @Value("${bill.upload.ftp.password}") String PASSWORD;
+import com.expressway.electronicbill.api.helper.IConfigPropertiesHelper;
 
-	private Logger logger = Logger.getLogger("com.expressway.bill.upload.task");
+@DisallowConcurrentExecution
+public class BillUploadJob implements Job {
+	private @Autowired IConfigPropertiesHelper configPropertiesHelper;
+	private Logger logger = Logger.getLogger("com.expressway.electronicbill.schedule");
 
-	public void uploadBill() {
-		try {
-			// 读取目录
-			File directory = new File(LOCAL_DIR);
+	@Override
+	public void execute(JobExecutionContext context) throws JobExecutionException {
+		System.out.println(768678);
 
-			if (directory.exists()) {
-				// 遍历目录下的所有文件
-				for (File file : directory.listFiles()) {
-					FileInputStream in = new FileInputStream(file);
-					boolean flag = uploadFile(FTP_SERVER, FTP_PORT, USERNAME, PASSWORD, REMOTE_DIR, file.getName(), in);
-					logger.debug(flag);
-
-					if (flag == true) {
-						File dir = new File(LOCAL_BACKUP);
-
-						if (!dir.exists()) {
-							logger.debug("创建Backup文件夹");
-							dir.mkdirs();
-						}
-						logger.debug("已上传文件归档");
-						file.renameTo(new File(dir + File.separator + file.getName()));
-					}
-				}
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		// try {
+		// // 读取目录
+		// File directory = new File(configPropertiesHelper.getProperty(""));
+		//
+		// if (directory.exists()) {
+		// // 遍历目录下的所有文件
+		// for (File file : directory.listFiles()) {
+		// FileInputStream in = new FileInputStream(file);
+		// boolean flag = uploadFile(configPropertiesHelper.getProperty(""), 0,
+		// configPropertiesHelper.getProperty(""),
+		// configPropertiesHelper.getProperty(""),
+		// configPropertiesHelper.getProperty(""), file.getName(), in);
+		// logger.debug(flag);
+		//
+		// if (flag == true) {
+		// File dir = new File(configPropertiesHelper.getProperty(""));
+		//
+		// if (!dir.exists()) {
+		// logger.debug("创建Backup文件夹");
+		// dir.mkdirs();
+		// }
+		// logger.debug("已上传文件归档");
+		// file.renameTo(new File(dir + File.separator + file.getName()));
+		// }
+		// }
+		// }
+		// } catch (FileNotFoundException e) {
+		// e.printStackTrace();
+		// }
 	}
 
 	/**
