@@ -18,7 +18,7 @@ import com.expressway.electronicbill.api.helper.IConfigPropertiesHelper;
  * @author Ajaxfan
  */
 @Component
-final class ConfigPropertiesHelper implements IConfigPropertiesHelper{
+final class ConfigPropertiesHelper implements IConfigPropertiesHelper {
 	/** 用户目录 */
 	private static final String USER_HOME = "user.home";
 	/** 应用程序目录 */

@@ -1,8 +1,6 @@
-package com.expressway.electronicbill.schedule;
+package com.expressway.electronicbill.schedule.jobs;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -24,7 +22,7 @@ public class BillUploadJob implements Job {
 
 	@Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
-		System.out.println(768678);
+		System.out.println("BillUploadJob");
 
 		// try {
 		// // 读取目录

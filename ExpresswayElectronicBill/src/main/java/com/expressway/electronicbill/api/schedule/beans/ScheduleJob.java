@@ -1,4 +1,4 @@
-package com.expressway.electronicbill.schedule.beans;
+package com.expressway.electronicbill.api.schedule.beans;
 
 public class ScheduleJob {
 	/** 任务id */
@@ -13,6 +13,16 @@ public class ScheduleJob {
 	private String cronExpression;
 	/** 任务描述 */
 	private String desc;
+	/** 是否启用 */
+	private boolean enabled;
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
 	public String getJobId() {
 		return jobId;

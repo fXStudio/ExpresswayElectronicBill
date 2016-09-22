@@ -54,18 +54,17 @@
 	    
 	    <div id="layout" class="pure-g">
 	        <div class="pure-u-1 pure-u-md-3-4">
-	        	<table id="example" class="display" cellspacing="0">
+	        	<table id="example" class="display" cellspacing="0" width="100%">
 			        <thead>
 			            <tr>
-			                <th>Job Id</th>
 			                <th>Job Name</th>
 			                <th>Status</th>
 			                <th>Cron</th>
-			                <th>options</th>
 			                <th>Desc</th>
+			                <th>options</th>
 			            </tr>
 			        </thead>
-			    </table>
+		        </table>
 	        </div>
 	        
 	        <div class="pure-u-1 pure-u-md-1-4 sidebar">
@@ -96,7 +95,6 @@
 			            "type": "POST"
 			        },
 			        columns: [
-			            { data: "jobId" },
 			            { data: "jobName" },
 			            { data: "jobStatus" },
 			            { 
@@ -106,7 +104,7 @@
 			            {/** Custom Define Column */
 				            "targets": -1,
 				            "data": null,
-				            "defaultContent": "<span>run</span>&nbsp;<span>stop</span>"
+				            "defaultContent": "<a class='pure-button pure-button-small pure-button-primary'><i class='fa fa-cog'></i>start</a>"
 				        }
 			        ],
 			        select: {

@@ -19,11 +19,11 @@
 	<mvc:resources mapping="/javascript/**" location="/resources/javascript/" />
 	<mvc:resources mapping="/styles/**" location="/resources/css/" />
 	<mvc:resources mapping="/images/**" location="/resources/images/" />
-	
+
 	<!-- 计划任务工厂类 -->
 	<bean id="schedulerFactoryBean"
 		class="org.springframework.scheduling.quartz.SchedulerFactoryBean" />
-		
+
 	<!-- 实现rest服务 -->
 	<bean id="jacksonMessageConverter"
 		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">

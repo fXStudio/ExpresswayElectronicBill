@@ -1,12 +1,4 @@
-package com.expressway.electronicbill.schedule;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
+package com.expressway.electronicbill.schedule.jobs;
 
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
@@ -15,12 +7,6 @@ import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.expressway.electronicbill.api.helper.IConfigPropertiesHelper;
-import com.expressway.electronicbill.reports.detail.BillBody;
-import com.expressway.electronicbill.reports.detail.BillChargeItem;
-import com.expressway.electronicbill.reports.detail.BillDetail;
-import com.expressway.electronicbill.reports.detail.BillDetailBody;
-import com.expressway.electronicbill.reports.detail.BillDetailHeader;
-import com.expressway.electronicbill.reports.detail.BillHeader;
 
 @DisallowConcurrentExecution
 public class BillDetailJob implements Job {
@@ -28,7 +14,7 @@ public class BillDetailJob implements Job {
 
 	@Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
-		System.out.println(123);
+		System.out.println("BillDetailJob");
 		
 //		try {
 //			// 票据明细

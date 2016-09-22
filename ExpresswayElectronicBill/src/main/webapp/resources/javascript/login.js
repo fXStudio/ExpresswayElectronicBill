@@ -5,7 +5,7 @@ $(document).ready(function() {
 	// 自定义系统函数
 	var loginFnc = function() {
 		return {
-			setFocus: function(){ $(':text:first').focus() },// 设置焦点
+			setFocus: function(){ $(':text:first').focus(); $(':text:first').select();},// 设置焦点
 			alertMessage: function(){
 				// 包裹类的引用
 				var warpper = this;
