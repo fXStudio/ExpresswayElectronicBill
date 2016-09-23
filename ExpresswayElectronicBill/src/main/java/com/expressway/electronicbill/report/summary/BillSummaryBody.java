@@ -1,4 +1,4 @@
-package com.expressway.electronicbill.reports.summary;
+package com.expressway.electronicbill.report.summary;
 
 import javax.xml.bind.annotation.XmlAccessOrder;
 import javax.xml.bind.annotation.XmlAccessType;

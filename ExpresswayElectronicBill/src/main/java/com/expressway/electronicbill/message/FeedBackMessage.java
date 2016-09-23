@@ -1,4 +1,4 @@
-package com.expressway.electronicbill.messages;
+package com.expressway.electronicbill.message;
 
 /**
  * 方法调用后的返回信息

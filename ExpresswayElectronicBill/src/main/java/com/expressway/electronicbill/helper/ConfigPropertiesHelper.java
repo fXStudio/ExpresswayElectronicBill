@@ -1,4 +1,4 @@
-package com.expressway.electronicbill.helpers;
+package com.expressway.electronicbill.helper;
 
 import java.io.File;
 import java.io.FileInputStream;

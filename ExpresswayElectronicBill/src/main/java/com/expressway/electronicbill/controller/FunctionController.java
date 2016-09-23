@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.expressway.electronicbill.api.helper.IConfigPropertiesHelper;
-import com.expressway.electronicbill.messages.FeedBackMessage;
+import com.expressway.electronicbill.message.FeedBackMessage;
 
 /**
  * 会话控制器

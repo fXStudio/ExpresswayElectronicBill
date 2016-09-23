@@ -104,15 +104,6 @@
 			            	<input id="localDir" type="text">
 			            </#if>
 			        </div>
-			        
-			        <div class="pure-control-group">
-			            <label for="foo">Archive Directory</label>
-			            <#if model["localBackup"]??>
-			            	<input id="localBackup" type="text" value="${model["localBackup"]}">
-			            <#else>
-			            	<input id="localBackup" type="text">
-			            </#if>
-			        </div>
 			
 			        <div class="pure-controls">
 			            <button type="submit" class="pure-button pure-button-default">Test</button>
